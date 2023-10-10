@@ -1,0 +1,27 @@
+{
+  "name": "scan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "scan",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.1.4",
+    "gatsby": "^5.12.4",
+    "gatsby-plugin-manifest": "^5.12.0",
+    "gatsby-plugin-styled-components": "^6.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
+    "redux": "^4.2.1",
+    "styled-components": "^6.0.8"
+  }
+}
