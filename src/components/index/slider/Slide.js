@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {colorTertiary} from "/src/styles/variables";
+import {primaryLight} from "/src/styles/variables";
 
 const Container = styled.div`
   width: 400px;
   height: 225px;
   border-radius: 10px;
-  background: ${colorTertiary};
+  background: ${primaryLight};
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
   padding: 20px;
   letter-spacing: 0.18px;

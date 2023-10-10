@@ -18,7 +18,7 @@ import {store} from "/src/MOCKS";
 import Slide from "/src/components/index/slider/Slide";
 import Slider from "/src/components/index/slider/Slider";
 import TariffCard from "../components/index/TariffCard";
-import {colorAddPrimary, colorAddSecondary, colorSecondary, colorTertiary} from "../styles/variables";
+import {secondaryOrange, secondaryAqua, primaryDark, primaryLight} from "../styles/variables";
 
 const SectionService = styled.section`
   padding-bottom: 90px;
@@ -91,7 +91,7 @@ const IndexPage = () => {
                     <div className='tariff_cards'>
                         <TariffCard
                             backgroundImage={iconBeginner}
-                            backgroundColor={colorAddPrimary}
+                            backgroundColor={secondaryOrange}
                             title='Beginner'
                             annotation='Для небольшого исследования'
                             currentPrice='799'
@@ -105,7 +105,7 @@ const IndexPage = () => {
                         />
                         <TariffCard
                             backgroundImage={iconPro}
-                            backgroundColor={colorAddSecondary}
+                            backgroundColor={secondaryAqua}
                             title='Pro'
                             annotation='Для HR и фрилансеров'
                             currentPrice='1 299'
@@ -119,8 +119,8 @@ const IndexPage = () => {
                         />
                         <TariffCard
                             backgroundImage={iconBusiness}
-                            backgroundColor={colorSecondary}
-                            textColor={colorTertiary}
+                            backgroundColor={primaryDark}
+                            textColor={primaryLight}
                             title='Business'
                             annotation='Для корпоративных клиентов'
                             currentPrice='2 379'

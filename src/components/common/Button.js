@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import {colorAddTertiary, colorTertiary} from "/src/styles/variables";
+import {secondaryBlue, primaryLight} from "/src/styles/variables";
 
 const ButtonActive = styled.button`
   height: 59px;
   width: ${props => props.$width || '355px'};
   border: none;
   border-radius: 5px;
-  background-color: ${props => props.$backgroundColor || colorAddTertiary};
+  background-color: ${props => props.$backgroundColor || secondaryBlue};
   cursor: pointer;
-  color: ${props => props.$color || colorTertiary};
+  color: ${props => props.$color || primaryLight};
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.22px;
@@ -26,7 +26,7 @@ const Button = (props) => {
                 ?
                 <ButtonActive $width={props.width} $backgroundColor={props.backgroundColor} $color={props.color}>{props.children}</ButtonActive>
                 :
-                <ButtonInActive $width={props.width} $color={props.color} onClick={e => {e.stopPropagation()}}>{props.children}</ButtonInActive>
+                <ButtonInActive $width={props.width} $color={props.color} onClick={e => e.preventDefault()}>{props.children}</ButtonInActive>
             }
         </>
     )

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {colorAddSecondary, colorPrimary, colorSecondary, colorTertiary} from "/src/styles/variables";
+import {secondaryAqua, primary, primaryLight} from "/src/styles/variables";
 import logo from '/src/assets/images/Footer/logo.svg';
 
-const Container = styled.div`
+const Container = styled.footer`
   height: 137px;
-  background: ${colorPrimary};
+  background: ${primary};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,11 +20,11 @@ const Contacts = styled.div`
   // .icons *, .icons {
   //   margin: 0;
   //   font-size: 10px;
-  //   color: ${colorAddSecondary};
+  //   color: ${secondaryAqua};
   // }
   .text {
     margin: 20px 0;
-    color: ${colorTertiary};
+    color: ${primaryLight};
     text-align: right;
     font-size: 14px;
   }

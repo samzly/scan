@@ -1,6 +1,7 @@
-export const colorPrimary = '#029491';
-export const colorSecondary = '#000';
-export const colorTertiary = '#FFF';
-export const colorAddPrimary = '#FFB64F';
-export const colorAddSecondary = '#7CE3E1';
-export const colorAddTertiary = '#5970FF';
+export const primary = '#029491';
+export const primaryDark = '#000';
+export const primaryLight = '#FFF';
+export const primaryGrey = '#949494';
+export const secondaryOrange = '#FFB64F';
+export const secondaryAqua = '#7CE3E1';
+export const secondaryBlue = '#5970FF';

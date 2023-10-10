@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colorAddSecondary, colorSecondary, colorTertiary } from "/src/styles/variables";
+import { secondaryAqua, primaryDark, primaryLight } from "/src/styles/variables";
 import logo from '/src/assets/images/Header/logo.svg';
 import { Link } from "gatsby";
                                                                                                // MOCK
@@ -8,7 +8,7 @@ import { store } from "../../MOCKS";
 
 const Container = styled.div`
   height: 93px;
-  background: ${colorTertiary};
+  background: ${primaryLight};
   display: grid;
   grid-template-columns: 415px 1fr 415px;
   align-items: center;
@@ -33,7 +33,7 @@ const Item = styled(Link)`
   text-decoration: none;
   letter-spacing: 0.14px;
   font-size: 14px;
-  color: ${colorSecondary};
+  color: ${primaryDark};
 `
 const User = styled.div`
   width: 415px;
@@ -51,12 +51,15 @@ const User = styled.div`
     opacity: 0.4;
   }
 `
-const Button = styled.button`
+const Button = styled(Link)`
   width: 65px;
   height: 26px;
+  text-align: center;
+  line-height: 26px;
+  text-decoration: none;
   border: none;
   border-radius: 5px;
-  background: ${colorAddSecondary};
+  background: ${secondaryAqua};
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.14px;
@@ -65,9 +68,9 @@ const Button = styled.button`
 const userNotAuthorized = <>
     <span className='registry'>Зарегистрироваться</span>
     <svg width='40px' height='26px'>
-        <rect width='2px' height='26px' x='18px' fill={colorAddSecondary} stroke={colorAddSecondary}/>
+        <rect width='2px' height='26px' x='18px' fill={secondaryAqua} stroke={secondaryAqua}/>
     </svg>
-    <Button>Войти</Button>
+    <Button to='/authorization'>Войти</Button>
 </>
 
 const Header = () => {

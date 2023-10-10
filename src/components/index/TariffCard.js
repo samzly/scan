@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {colorSecondary, colorTertiary} from "/src/styles/variables";
+import {primaryDark, primaryLight} from "/src/styles/variables";
 import itemMark from '/src/assets/images/IndexPage/tariff_item-mark.svg';
 
                                                                                            // MOCK
@@ -24,7 +24,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  background: url('${props => props.$backgroundImage || null}') ${props => props.$backgroundColor || colorTertiary} 95% 30% no-repeat;
+  background: url('${props => props.$backgroundImage || null}') ${props => props.$backgroundColor || primaryLight} 95% 30% no-repeat;
   border-radius: 10px 10px 0 0;
   * {
     color: ${props => props.$textColor || 'inherit'};
@@ -47,7 +47,7 @@ const MarkCurrent = styled.div`
   padding: 0;
   text-align: center;
   line-height: 24px;
-  color: ${colorTertiary};
+  color: ${primaryLight};
   font-size: 14px;
   letter-spacing: 0.14px;
   width: 134px;
@@ -134,7 +134,7 @@ const TariffCard = (props) => {
                 </ul>
             </Features>
             <ButtonContainer>
-                <Button activeCondition={true} backgroundColor={current ? '#D2D2D2' : null} color={current ? colorSecondary : null}>
+                <Button activeCondition={true} backgroundColor={current ? '#D2D2D2' : null} color={current ? primaryDark : null}>
                     {current ? 'Перейти в личный кабинет' : 'Подробнее'}
                 </Button>
             </ButtonContainer>
