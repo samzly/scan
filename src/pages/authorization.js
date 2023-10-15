@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Layout from "/src/components/layout/layout";
 import styled from "styled-components";
-import {primary, primaryGrey, primaryLight, secondaryBlue} from "/src/styles/variables";
+import {inputStyle, primary, primaryGrey, primaryLight, secondaryBlue} from "/src/styles/variables";
 import Button from "/src/components/common/Button";
 import buttonGoogle from '/src/assets/images/AutorizationPage/button_google.svg';
 import buttonFacebook from '/src/assets/images/AutorizationPage/button_facebook.svg';
@@ -45,12 +45,9 @@ const AuthorizationForm = styled.form`
       margin-bottom: 10px;
     }
     .input {
-      width: 100%;
-      height: 43px;
-      border-radius: 5px;
-      border: 1px solid #C7C7C7;
-      background: ${primaryLight};
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+      ${inputStyle};
+      font-size: 16px;
+      letter-spacing: 0.16px;
     }
   }
   .password-restore {
@@ -119,11 +116,11 @@ const AuthorizationPage = () => {
                     </Sign>
                     <label className='label'>
                         Логин или номер телефона:
-                        <input className='input' type='text' value={login} onChange={e => setLogin(e.target.value)}/>
+                        <input className='input' type='text' value={login} required onChange={e => setLogin(e.target.value)}/>
                     </label>
                     <label className='label'>
                         Пароль:
-                        <input className='input' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
+                        <input className='input' type='password' value={password} required onChange={e => setPassword(e.target.value)}/>
                     </label>
                     <Button type='submit' width='379px' activeCondition={login && password}>Войти</Button>
                     <a className='password-restore' href='/authorization'>Восстановить пароль</a>

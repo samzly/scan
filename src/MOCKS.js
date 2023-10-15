@@ -1,4 +1,4 @@
 export const store = {
-    isAuthorized: false,
+    isAuthorized: true,
     tariff: 'beginner'
 };

@@ -19,6 +19,7 @@ import Slide from "/src/components/index/slider/Slide";
 import Slider from "/src/components/index/slider/Slider";
 import TariffCard from "../components/index/TariffCard";
 import {secondaryOrange, secondaryAqua, primaryDark, primaryLight} from "../styles/variables";
+import {navigate} from "gatsby";
 
 const SectionService = styled.section`
   padding-bottom: 90px;
@@ -74,7 +75,10 @@ const IndexPage = () => {
                                                                                                              {/*MOCK*/}
 
 
-                    <Button activeCondition={store.isAuthorized} width='335px'>Запросить данные</Button>
+                    <Button activeCondition={store.isAuthorized} width='335px' onClick={e => {
+                        e.preventDefault();
+                        navigate('/search-request/');
+                    }}>Запросить данные</Button>
                 </SectionService>
                 <SectionSlider>
                     <h2 className='title'>почему именно мы</h2>

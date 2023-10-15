@@ -24,7 +24,7 @@ const Button = (props) => {
         <>
             {props.activeCondition
                 ?
-                <ButtonActive $width={props.width} $backgroundColor={props.backgroundColor} $color={props.color}>{props.children}</ButtonActive>
+                <ButtonActive $width={props.width} $backgroundColor={props.backgroundColor} $color={props.color} onClick={props.onClick}>{props.children}</ButtonActive>
                 :
                 <ButtonInActive $width={props.width} $color={props.color} onClick={e => e.preventDefault()}>{props.children}</ButtonInActive>
             }
