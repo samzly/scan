@@ -24,6 +24,8 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    scroll-behavior: smooth;
+    word-break: break-word;
 }
 h1, h2 {
     font-family: 'Ferry', sans-serif;

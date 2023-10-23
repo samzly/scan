@@ -7,6 +7,7 @@ export const primaryGrey = '#949494';
 export const secondaryOrange = '#FFB64F';
 export const secondaryAqua = '#7CE3E1';
 export const secondaryBlue = '#5970FF';
+export const secondaryError = '#FF5959'
 export const inputStyle = css`
   width: 100%;
   height: 43px; 
@@ -17,3 +18,4 @@ export const inputStyle = css`
   outline: none;
   padding: 12px 19px;
 `
+export const smallScreen = 'screen and (max-width: 400px)'

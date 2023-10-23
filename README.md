@@ -1,5 +1,16 @@
 Дипломный проект
 
+<strong>Запуск в режиме разработки</strong>
+    
+    gatsby develop
+
+или
+
+    gatsby start
+
+<strong>Компиляция рабочей сборки</strong>
+
+    gatsby build
 
 Постановка задачи
 

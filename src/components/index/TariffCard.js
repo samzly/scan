@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {primaryDark, primaryLight} from "/src/styles/variables";
+import { primaryDark, primaryLight, smallScreen } from "/src/styles/variables";
 import itemMark from '/src/assets/images/IndexPage/tariff_item-mark.svg';
-
-                                                                                           // MOCK
-
-import {store} from "../../MOCKS";
-import Button from "/src/components/common/Button";
+import { useSelector } from "react-redux";
+import Button from "../common/Button";
 
 const Container = styled.div`
   width: 415px;
@@ -14,7 +11,12 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 132px 36px 65px 1fr 107px;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+  @media ${smallScreen} {
+    width: 335px;
+    height: 512px;
+    grid-template-rows: 132px 20px 65px 1fr 107px;
+  }
   & > * {
     padding-left: 30px;
   }
@@ -26,6 +28,10 @@ const Header = styled.div`
   row-gap: 10px;
   background: url('${props => props.$backgroundImage || null}') ${props => props.$backgroundColor || primaryLight} 95% 30% no-repeat;
   border-radius: 10px 10px 0 0;
+  @media ${smallScreen} {
+    background-size: 20%;
+    background-position: 97% 10%;
+  }
   * {
     color: ${props => props.$textColor || 'inherit'};
   }
@@ -34,9 +40,16 @@ const Header = styled.div`
     font-weight: 500;
     letter-spacing: 0.3px;
     margin-top: 30px;
+    @media ${smallScreen} {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+    }
   }
   .annotation {
     letter-spacing: 0.18px;
+    @media ${smallScreen} {
+      font-size: 18px;
+    }
   }
 `
 const MarkCurrent = styled.div`
@@ -75,6 +88,9 @@ const Price = styled.div`
   }
   .creditPrice {
     letter-spacing: 0.18px;
+    @media ${smallScreen} {
+      max-width: 275px;
+    }
   }
 `
 const Features = styled.div`
@@ -84,6 +100,9 @@ const Features = styled.div`
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0.2px;
+    @media ${smallScreen} {
+      font-size: 18px;
+    }
   }
   .list {
     margin-top: 10px;
@@ -94,6 +113,9 @@ const Features = styled.div`
     padding-left: 28px;
     letter-spacing: 0.18px;
     margin-bottom: 8px;
+    @media ${smallScreen} {
+      font-size: 16px;
+    }
   }
 `
 const ButtonContainer = styled.div`
@@ -101,6 +123,9 @@ const ButtonContainer = styled.div`
   padding: 0;
   justify-self: center;
   align-self: center;
+  @media ${smallScreen} {
+    width: 290px;
+  }
   * {
     font-size: 20px;
   }
@@ -109,10 +134,9 @@ const ButtonContainer = styled.div`
 
 const TariffCard = (props) => {
 
-                                                                                        // MOCK
+    let tariff = useSelector(state => state.user.tariff);
+    const current = props.title.toLowerCase() === tariff;
 
-
-    const current = props.title.toLowerCase() === store.tariff.toLowerCase();
     return (
         <Container style={current ? {border: '2px solid ' + props.backgroundColor} : null}>
             <Header $backgroundImage={props.backgroundImage} $backgroundColor={props.backgroundColor} $textColor={props.textColor}>
@@ -129,7 +153,7 @@ const TariffCard = (props) => {
                 <strong className='list_title'>В тариф входит:</strong>
                 <ul className='list'>
                     {props.featuresArray.map((item) => (
-                        <li className='item'>{item}</li>
+                        <li className='item' key={item.toString()}>{item}</li>
                     ))}
                 </ul>
             </Features>

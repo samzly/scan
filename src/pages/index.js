@@ -11,55 +11,91 @@ import iconSupport from '/src/assets/images/Slider/icon_support.svg';
 import iconBeginner from '/src/assets/images/IndexPage/background_tariff-beginner.svg';
 import iconPro from '/src/assets/images/IndexPage/background_tariff-pro.svg';
 import iconBusiness from '/src/assets/images/IndexPage/background_tariff-business.svg';
-
-                                                                                                            // MOCK
-
-import {store} from "/src/MOCKS";
 import Slide from "/src/components/index/slider/Slide";
 import Slider from "/src/components/index/slider/Slider";
-import TariffCard from "../components/index/TariffCard";
-import {secondaryOrange, secondaryAqua, primaryDark, primaryLight} from "../styles/variables";
-import {navigate} from "gatsby";
+import TariffCard from "/src/components/index/TariffCard";
+import { secondaryOrange, secondaryAqua, primaryDark, primaryLight, smallScreen } from "/src/styles/variables";
+import { navigate } from "gatsby";
+import { useSelector } from "react-redux";
 
 const SectionService = styled.section`
   padding-bottom: 90px;
   margin: 70px 0 110px;
   background: url('${backgroundSectionService}') right/639px no-repeat;
+  @media ${smallScreen} {
+    height: 670px;
+    margin: 30px 0 55px;
+    padding-bottom: 0;
+    background-size: 100%;
+    background-position: 50% 100%;
+  }
   .title {
     font-size: 60px;
     letter-spacing: 0.6px;
     width: 743px;
+    @media ${smallScreen} {
+      font-size: 28px;
+      letter-spacing: 0.28px;
+      width: 100%;
+    }
   }
   .annotation {
     font-size: 20px;
     letter-spacing: 0.2px;
     margin: 20px 0 70px;
+    @media ${smallScreen} {
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
   }
 `
 const SectionSlider = styled.section`
   .title {
     font-size: 45px;
     letter-spacing: 0.45px;
+    @media ${smallScreen} {
+      font-size: 28px;
+      letter-spacing: 0.28px;
+    }
   }
 `
 const SectionPicture = styled.div`
   background: url('${backgroundSectionPicture}') no-repeat;
   height: 576px;
+  @media ${smallScreen} {
+    height: 420px;
+    background-size: 250%;
+    background-position: 0% 100%;
+  }
 `
-const SectionTariffs = styled.div`
+const SectionTariffs = styled.section`
   margin: 108px 0 118px;
+  @media ${smallScreen} {
+    margin: 80px 0 43px;
+  }
   .tariff_cards {
     display: flex;
     justify-content: space-between;
+    @media ${smallScreen} {
+      flex-direction: column;
+      gap: 43px;
+    }
   }
   & > .title {
     font-size: 45px;
     letter-spacing: 0.45px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
+    @media ${smallScreen} {
+      font-size: 28px;
+      letter-spacing: 0.28px;
+    }
   }
 `
 
 const IndexPage = () => {
+
+    const isAuthorized = useSelector(state => state.user?.isAuthorized);
+
     return (
         <Layout>
             <main>
@@ -70,18 +106,13 @@ const IndexPage = () => {
                     <p className='annotation'>
                         Комплексный анализ публикаций, получение данных <br/>в формате PDF на электронную почту.
                     </p>
-
-
-                                                                                                             {/*MOCK*/}
-
-
-                    <Button activeCondition={store.isAuthorized} width='335px' onClick={e => {
+                    <Button activeCondition={isAuthorized} width='335px' onClick={e => {
                         e.preventDefault();
                         navigate('/search-request/');
                     }}>Запросить данные</Button>
                 </SectionService>
                 <SectionSlider>
-                    <h2 className='title'>почему именно мы</h2>
+                    <h2 className='title'>почему <br/>именно мы</h2>
                     <Slider>
                         <Slide img={iconTimer}>Высокая и оперативная скорость обработки заявки</Slide>
                         <Slide img={iconLoupe}>Огромная комплексная база данных, обеспечивающая объективный ответ на запрос</Slide>
@@ -145,5 +176,5 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <>
-    <title>Сервис "СКАН"</title>
+    <title>Сервис "СКАН" - Главная</title>
 </>

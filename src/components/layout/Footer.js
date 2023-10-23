@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {secondaryAqua, primary, primaryLight} from "/src/styles/variables";
-import logo from '/src/assets/images/Footer/logo.svg';
+import { secondaryAqua, primary, primaryLight, smallScreen } from "/src/styles/variables";
+import logo from "/src/assets/images/Footer/logo.svg";
 
 const Container = styled.footer`
   height: 137px;
@@ -14,6 +14,10 @@ const Logo = styled.img`
   height: 100%;
   grid-area: 1 / 1 / 2 / 2;
   justify-self: left;
+  @media ${smallScreen} {
+    height: 65%;
+    align-self: start;
+  }
 `
 const Contacts = styled.div`
   //при коммерческом использовании сайта, необходимо раскомментировать строки ниже

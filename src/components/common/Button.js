@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {secondaryBlue, primaryLight} from "/src/styles/variables";
+import {secondaryBlue, primaryLight, smallScreen} from "/src/styles/variables";
 
 const ButtonActive = styled.button`
   height: 59px;
@@ -13,6 +13,10 @@ const ButtonActive = styled.button`
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.22px;
+  @media ${smallScreen} {
+    width: ${props => props.$width || '100%'};
+    font-size: 20px;
+  }
 `
 const ButtonInActive = styled(ButtonActive)`
   opacity: 0.5;
