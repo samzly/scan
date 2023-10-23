@@ -10,7 +10,7 @@ import background from "/src/assets/images/AutorizationPage/background__authoriz
 import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "/src/store/slices/userSlice";
 import { navigate } from "gatsby";
-import instance from "/studying/projects/scan/axios";
+import instance from "/axios";
 import useLogin from "/src/hooks/useLogin";
 import usePassword from "/src/hooks/usePassword";
 import imageLock from "/src/assets/images/AutorizationPage/image_lock.svg";

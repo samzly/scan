@@ -5,7 +5,7 @@ import logo from "/src/assets/images/Header/logo.svg";
 import logoMobile from "/src/assets/images/Footer/logo.svg";
 import { Link } from "gatsby";
 import { useDispatch, useSelector } from "react-redux";
-import instance from "/studying/projects/scan/axios";
+import instance from "/axios";
 import { getLimits, logOut } from "/src/store/slices/userSlice";
 import Loader from "/src/components/common/Loader";
 

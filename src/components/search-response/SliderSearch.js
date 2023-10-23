@@ -181,7 +181,7 @@ const SliderSearch = () => {
 
     useEffect(() => {
         setSliderContainerWidth(refSlider.current.getBoundingClientRect().width - 133);
-    })
+    }, [])
     const maxTranslate = articlesDates.length * 133 - sliderContainerWidth;
     useEffect(() => {
         refSlider.current.scrollLeft = translate;
@@ -191,13 +191,13 @@ const SliderSearch = () => {
             setTranslate(window.matchMedia("(max-width: 400px)").matches ? 300 : maxTranslate);
             setTranslate(maxTranslate);
         }
-    }, [translate])
+    }, [translate, maxTranslate])
 
     // текст загрузки и таймер, если не удалось загрузить
 
     const [text, setText] = useState('Загружаем данные ')
     let timer = setTimeout(() => {
-        if (loader == true)
+        if (loader === true)
             setText('Не удалось загрузить')
     }, 10000);
     useEffect(() => {
