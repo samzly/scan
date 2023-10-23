@@ -23,7 +23,8 @@ const ArrowRight = styled.button`
   height: 39px;
   border: none;
   background: url('${arrowRight}') center;
-  cursor: pointer;
+  cursor: ${props => props.$end ? 'not-allowed' : 'pointer'};
+  opacity: ${props => props.$end ? 0.3 : 1};
   @media ${smallScreen} {
     align-self: end;
     margin-bottom: 15px;
@@ -191,7 +192,7 @@ const SliderSearch = () => {
             setTranslate(window.matchMedia("(max-width: 400px)").matches ? 300 : maxTranslate);
             setTranslate(maxTranslate);
         }
-    }, [translate, maxTranslate])
+    }, [translate])
 
     // текст загрузки и таймер, если не удалось загрузить
 
@@ -206,7 +207,7 @@ const SliderSearch = () => {
 
     return (
         <Container>
-            <ArrowLeft onClick={() => setTranslate(prev => window.matchMedia("(max-width: 400px)").matches ? prev - 300 : prev - 133)}/>
+            <ArrowLeft $end={translate === 0} onClick={() => setTranslate(prev => window.matchMedia("(max-width: 400px)").matches ? prev - 300 : prev - 133)}/>
                 <Slider ref={refSlider}>
                     <SliderHeader>
                         <p>Период</p>
@@ -230,7 +231,7 @@ const SliderSearch = () => {
                         </Loader>
                     </SliderContainer>
                 </Slider>
-            <ArrowRight onClick={() => setTranslate(next => window.matchMedia("(max-width: 400px)").matches ? next + 300 : next + 133)}/>
+            <ArrowRight $end={translate === maxTranslate} onClick={() => setTranslate(next => window.matchMedia("(max-width: 400px)").matches ? next + 300 : next + 133)}/>
         </Container>
     )
 }

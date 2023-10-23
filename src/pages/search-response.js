@@ -13,7 +13,7 @@ const Main = styled.main`
   flex-direction: column;
 `
 const SectionPresentation = styled.section`
-  background: url(${background}) right/35% no-repeat;
+  background: url(${background}) right/30% no-repeat;
   padding: 69px 0 127px;
   @media ${smallScreen} {
     padding: 20px 0 314px;
