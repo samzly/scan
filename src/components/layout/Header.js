@@ -62,6 +62,7 @@ const User = styled.div`
     letter-spacing: 0.14px;
     font-size: 14px;
     opacity: 0.4;
+    cursor: pointer;
   }
   .info_container {
     width: 175px;
