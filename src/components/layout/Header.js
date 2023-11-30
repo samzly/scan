@@ -249,7 +249,7 @@ const Header = () => {
 
     const UserNotAuthorized = () => (
         <>
-            <a className='registry' href='/'>Зарегистрироваться onclick={() => alert('Для получения логина и пароля обратитесь к администратору')}</a>
+            <a className='registry'  onClick={() => alert('Для получения логина и пароля обратитесь к администратору')}>Зарегистрироваться</a>
             <svg width='40px' height='26px'>
                 <rect width='2px' height='26px' x='18px' fill={secondaryAqua} stroke={secondaryAqua}/>
             </svg>
